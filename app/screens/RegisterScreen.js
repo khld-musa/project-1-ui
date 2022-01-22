@@ -18,11 +18,9 @@ import {
   FormField,
   SubmitButton,
 } from "../components/forms";
-import { Icon } from "../components/Icon";
-import { images, COLORS, FONTS, SIZES } from "../config";
-import AppButton from "../components/Button";
 
-import { Images, argonTheme } from "../constants";
+import { images, COLORS, FONTS, SIZES } from "../config";
+
 import AppText from "../components/Text";
 const { width, height } = Dimensions.get("screen");
 
@@ -37,22 +35,21 @@ function RegisterScreen() {
 
   return (
     <Block style={styles.container}>
-
       <StatusBar hidden />
-      <ImageBackground source={images.bg} style={{ width, height, zIndex: 1, opacity:0.9 }}>
-
+      <ImageBackground
+        source={images.bg}
+        style={{ width, height, zIndex: 1, opacity: 0.9 }}
+      >
         <Block flex middle>
-        <AppText style={styles.text}>
-        something
-      </AppText>
+          <AppText style={styles.text}>something</AppText>
           <Block style={styles.registerContainer}>
-            <Block flex >
+            <Block flex>
               <Block flex={0.17} middle>
                 <Text color="#8898AA" size={12}>
-                   sign up 
+                  sign up
                 </Text>
               </Block>
-              <Block  flex center>
+              <Block flex center>
                 <Form
                   initialValues={{ name: "", email: "", password: "" }}
                   validationSchema={validationSchema}
@@ -65,8 +62,7 @@ function RegisterScreen() {
                   >
                     <Block width={width * 0.8} style={{ marginBottom: 15 }}>
                       <FormField
-                      style={{borderBottomWidth:0.2,width:"95%"}}
-                     
+                        style={{ borderBottomWidth: 0.2, width: "95%" }}
                         autoCorrect={false}
                         icon="account"
                         name="name"
@@ -75,7 +71,7 @@ function RegisterScreen() {
                     </Block>
                     <Block width={width * 0.8} style={{ marginBottom: 15 }}>
                       <FormField
-                      style={{borderBottomWidth:0.2,width:"95%"}}
+                        style={{ borderBottomWidth: 0.2, width: "95%" }}
                         autoCapitalize="none"
                         autoCorrect={false}
                         icon="email"
@@ -87,7 +83,7 @@ function RegisterScreen() {
                     </Block>
                     <Block width={width * 0.8}>
                       <FormField
-                      style={{borderBottomWidth:0.2,width:"95%"}}
+                        style={{ borderBottomWidth: 0.2, width: "95%" }}
                         autoCapitalize="none"
                         autoCorrect={false}
                         icon="lock"
@@ -102,20 +98,25 @@ function RegisterScreen() {
                         checkboxStyle={{
                           borderWidth: 3,
                         }}
-                        color={argonTheme.COLORS.PRIMARY}
+                        color={COLORS.primary}
                         label="I agree with the"
                       />
                       <View
-                        style={{ width: 100,marginVertical:10 }}
+                        style={{ width: 100, marginVertical: 10 }}
                         color="transparent"
                         textStyle={{
-                          color: argonTheme.COLORS.PRIMARY,
+                          color: COLORS.primary,
                         }}
-                      >
-                      </View>
+                      ></View>
                     </Block>
                     <Block middle>
-                      <View color="primary" style={styles.createButton,{width:"100%",marginVertical:30}}>
+                      <View
+                        color="primary"
+                        style={
+                          (styles.createButton,
+                          { width: "100%", marginVertical: 30 })
+                        }
+                      >
                         <SubmitButton title="Register" />
                       </View>
                     </Block>
@@ -132,7 +133,7 @@ function RegisterScreen() {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: COLORS.secondary
+    backgroundColor: COLORS.secondary,
   },
   registerContainer: {
     width: width * 0.9,
@@ -141,7 +142,7 @@ const styles = StyleSheet.create({
     borderRadius: 25,
   },
   socialConnect: {
-    backgroundColor: argonTheme.COLORS.WHITE,
+    backgroundColor: COLORS.white,
     borderBottomWidth: StyleSheet.hairlineWidth,
     borderColor: "#8898AA",
   },
@@ -149,7 +150,7 @@ const styles = StyleSheet.create({
     width: 120,
     height: 40,
     backgroundColor: "#fff",
-    shadowColor: argonTheme.COLORS.BLACK,
+    shadowColor: COLORS.black,
     shadowOffset: {
       width: 0,
       height: 4,
@@ -159,7 +160,7 @@ const styles = StyleSheet.create({
     elevation: 1,
   },
   socialTextButtons: {
-    color: argonTheme.COLORS.PRIMARY,
+    color: COLORS.primary,
     fontWeight: "800",
     fontSize: 14,
   },
@@ -175,12 +176,12 @@ const styles = StyleSheet.create({
     width: width * 0.5,
     marginTop: 25,
   },
-  text:{
-    alignItems:"center",
-    textAlign:"center",
-    width:"100%",
-    height:60,
-  }
+  text: {
+    alignItems: "center",
+    textAlign: "center",
+    width: "100%",
+    height: 60,
+  },
 });
 
 export default RegisterScreen;

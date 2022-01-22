@@ -18,11 +18,9 @@ import {
   FormField,
   SubmitButton,
 } from "../components/forms";
-import { Icon } from "../components/Icon";
-import { images, COLORS, FONTS, SIZES } from "../config";
-import AppButton from "../components/Button";
 
-import { Images, argonTheme } from "../constants";
+import { images, COLORS, FONTS, SIZES } from "../config";
+
 import AppText from "../components/Text";
 const { width, height } = Dimensions.get("screen");
 
@@ -91,14 +89,14 @@ function RegisterScreen() {
                         checkboxStyle={{
                           borderWidth: 3,
                         }}
-                        color={argonTheme.COLORS.PRIMARY}
+                        color={COLORS.primary}
                         label="I agree with the"
                       />
                       <View
                         style={{ width: 100, marginVertical: 10 }}
                         color="transparent"
                         textStyle={{
-                          color: argonTheme.COLORS.PRIMARY,
+                          color: COLORS.primary,
                         }}
                       ></View>
                     </Block>
@@ -132,7 +130,7 @@ const styles = StyleSheet.create({
     borderRadius: 25,
   },
   socialConnect: {
-    backgroundColor: argonTheme.COLORS.WHITE,
+    backgroundColor: COLORS.WHITE,
     borderBottomWidth: StyleSheet.hairlineWidth,
     borderColor: "#8898AA",
   },
@@ -140,7 +138,7 @@ const styles = StyleSheet.create({
     width: 120,
     height: 40,
     backgroundColor: "#fff",
-    shadowColor: argonTheme.COLORS.BLACK,
+    shadowColor: COLORS.BLACK,
     shadowOffset: {
       width: 0,
       height: 4,
@@ -150,7 +148,7 @@ const styles = StyleSheet.create({
     elevation: 1,
   },
   socialTextButtons: {
-    color: argonTheme.COLORS.PRIMARY,
+    color: COLORS.primary,
     fontWeight: "800",
     fontSize: 14,
   },
